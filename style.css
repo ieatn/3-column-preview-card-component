@@ -58,6 +58,11 @@ main {
     border-radius: 25px;
     cursor: pointer;
 }
+.car button:hover {
+    background-color: inherit;
+    border: 1px solid white;
+    color: white;
+}
 #sedan {
     color: var(--Bright-orange);
     background-color: var(--Bright-orange);
@@ -70,10 +75,9 @@ main {
     color: var(--Very-dark-cyan);
     background-color: var(--Very-dark-cyan);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     main {
         width: 80%;
-        display: block;
         grid-template-columns: 1fr;
     }
 }
