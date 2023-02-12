@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
 :root {
-    /* primary */
     --Bright-orange: hsl(31, 77%, 52%);
     --Dark-cyan: hsl(184, 100%, 22%);
     --Very-dark-cyan: hsl(179, 100%, 13%);
-    /* neutral */
     --Transparent-white: hsla(0, 0%, 100%, 0.75);
     --Very-light-gray: hsl(0, 0%, 95%);
     --h1-ff: 'Big Shoulders Display', cursive;
@@ -15,69 +16,76 @@
     box-sizing: border-box;
 }
 body {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    padding: 40px
 }
-main {
-    border-radius: 25px;
-    width: 60%;
-    height: 600px;
-    display: grid; 
+.grid {
+    max-width: 800px;
+    height: auto;
+    display: grid;
+    border-radius: 10px;
+    overflow: hidden;
     grid-template-columns: repeat(3, 1fr);
 }
-.car {
-    display: grid;
-    place-items: left;
-    gap: 1rem;
-    padding: 5rem;
-}
-.car h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    font-family: var(--h1-ff);
-    text-transform: uppercase;
+.grid h1 {
     color: white;
+    font-family: var(--h1-ff);
+    font-size: 2rem;
+    font-weight: 600;
 }
-.car p {
-    font-size: 1rem;
+.grid p {
+    color: white;
     font-family: var(--p-ff);
-    font-weight: 400;
     line-height: 30px;
-    color: var(--Transparent-white);
+    opacity: 0.6;
 }
-.car button {
-    font-size: 1rem;
-    font-weight: 700;
-    color: inherit;
+.grid > div {
+    display: grid;
+    place-content: left;
+    gap: 1rem;
+    padding: 2rem;
+}
+.btn {
+    width: 130px;
+    height: 40px;
     font-family: var(--p-ff);
-    width: 150px;
-    height: 50px;
+    font-weight: 600;
     background-color: white;
+    color: inherit;
     border: none;
     border-radius: 25px;
+    margin-top: 3rem;
     cursor: pointer;
 }
-.car button:hover {
+.btn:hover {
     background-color: inherit;
-    border: 1px solid white;
     color: white;
+    border: 1px solid white;
 }
-#sedan {
+
+.sedan {
+    /* for the button to inherit */
     color: var(--Bright-orange);
     background-color: var(--Bright-orange);
 }
-#suv {
+.suv {
     color: var(--Dark-cyan);
     background-color: var(--Dark-cyan);
 }
-#luxury {
+.luxury {
     color: var(--Very-dark-cyan);
     background-color: var(--Very-dark-cyan);
 }
-@media screen and (max-width: 650px) {
-    main {
-        width: 80%;
-        grid-template-columns: 1fr;
+
+@media (max-width: 768px) {
+    body {
+        height: 100%;
+    }
+    .grid {
+        display: flex;
+        flex-direction: column;
     }
 }
